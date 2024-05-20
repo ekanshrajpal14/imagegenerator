@@ -1,5 +1,5 @@
 
-const dotenv = require('dotenv').config();
+// const dotenv = require('dotenv').config();
 
 
 
@@ -39,7 +39,7 @@ button.addEventListener('click', async () => {
             url: 'https://ai-text-to-image-generator-api.p.rapidapi.com/cyberpunk',
             headers: {
                 'content-type': 'application/json',
-                'X-RapidAPI-Key': process.env.key,
+                'X-RapidAPI-Key': "cb622480f4msha9b2d7507d955f3p173525jsn10b0bbf67dd3",
                 'X-RapidAPI-Host': 'ai-text-to-image-generator-api.p.rapidapi.com'
             },
             data: {
