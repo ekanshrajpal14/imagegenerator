@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="../stylesheets/style.css">
+
+  <style>
+    * {
+      margin: 0%;
+      padding: 0%;
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    #box1 {
+      width: 100%;
+      height: 100vh;
+      position: relative;
+      background-color: aliceblue;
+    }
+
+    #box1left {
+      width: 65%;
+      height: 100vh;
+      background-color: #1c5e5b;
+      /* background-color: #11574a; */
+      /* background-color: #036c6c; */
+      color: white;
+      font-family: gilroy;
+      /* background-color:rgb(17, 29, 20); */
+    }
+
+
+
+    #navleft {
+      display: flex;
+      gap: 3vw;
+    }
+
+    #navleft>h3 {
+      font-size: 1vw;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    #nav>h1 {
+      font-size: 1.5vw;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+    }
+
+    #box1leftbtm {
+      margin-left: 7vw;
+      width: 70%;
+      height: 85%;
+      /* background-color: antiquewhite; */
+      padding-top: 7vw;
+      /* margin-left: auto;
+          margin-right: auto; */
+      /* padding-left: 5vw; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+
+    #box1leftbtmtext>h1 {
+
+      font-size: 4.5vw;
+      font-weight: 500;
+      color: #ED6969;
+      margin-bottom: 2.5vw;
+    }
+
+    #box1leftbtmtext>p {
+      width: 80%;
+      font-size: 1.2vw;
+      margin-bottom: 3vw;
+      /* font-weight: 500; */
+    }
+
+    #box1leftbtmtext>div {
+      width: 120px;
+      height: 40px;
+      background-color: #bdbd24;
+      align-items: center;
+      display: flex;
+      justify-content: space-around;
+      /* color: #036c6c; */
+      font-size: 1.1vw;
+      font-weight: 500;
+      border-radius: 5px;
+      padding: 0vw 0.3vw;
+    }
+
+    #box1leftbtmtext>div>div {
+      width: 30%;
+      height: 60%;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      font-size: 1.5vw;
+      color: #036c6c;
+      background-color: whitesmoke;
+    }
+
+    .opt {
+      width: 18vw;
+      height: 90px;
+      /* background-color:gainsboro; */
+      padding: 0.1vw;
+      border-radius: 10px;
+      overflow: hidden;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    }
+
+    .opt>img {
+      border-radius: 10px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+    }
+
+    #box1leftbtmopt {
+      width: 50%;
+      display: flex;
+      gap: 10px;
+    }
+
+    #box1right {
+      position: absolute;
+      width: 95%;
+      height: 90%;
+      margin-top: 5%;
+      background-color: #bdbd24;
+      /* top: 25%;
+          left: 50%; */
+    }
+
+    #box1right>img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all cubic-bezier(0.19, 1, 0.22, 1) 2s;
+      object-position: center;
+    }
+
+    #box1rt {
+      position: absolute;
+      width: 42%;
+      height: 50%;
+      top: 25%;
+      left: 50%;
+      /* background-color: #bdbd24; */
+    }
+
+    #inrbox1rt {
+      margin: 1vw;
+      width: 150px;
+      height: 150px;
+      float: right;
+      background-color: #1c5e5b75;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Login Here</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/login" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="text" name="username" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <!-- <div><hr></div> -->
+            <div style="width: 100%;height: 10vh; display: flex; align-items: center; justify-content: space-between;">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Create Your New Account</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form action="/register" method="post">
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Username</label>
+              <input type="username" name="username" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" id="exampleInputEmail1"
+                aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Password</label>
+              <input type="password" name="password" class="form-control" id="exampleInputPassword1">
+            </div>
+
+            <!-- <div><hr></div> -->
+            <div style="width: 100%;height: 10vh; display: flex; align-items: center; justify-content: space-between;">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="main">
+    <!-- <div class="toplayer">
+            <div class="webname">
+                <div class="logo1">
+                    <a href="">Homeify</a>
+                </div>
+            </div>
+            <div class="btn">
+                <a href="">Buy now</a>
+            </div>
+        </div> -->
+    <!-- <div class="toplayercover"></div> -->
+    <!-- <div class="overlayer">
+
+      <div id="topcontent">
+        <div id="logindiv">
+          <a href="" id="f1">
+            <h6 id="first">FR</h6>
+          </a>
+          <a href="">
+            <h6>LOG IN</h6>
+          </a>
+          <h6 id="loginsp">OR</h6>
+          <a href="">
+            <h6>CREATE A PROFILE </h6>
+          </a>
+        </div>
+      </div>
+      <div class="textcontent">
+        <a id="same" href="">AUROS</a>
+        <a id="same" href="">ALL FURNITURE</a>
+        <a id="same" href="">DESIGNER SOFFA</a>
+        <a href="">LUXURY BED</a>
+        <a href="">COMFORT COUCH</a>
+        <a href="">CUSTOMIZATION</a>
+        <a href="">BLOG</a>
+        <a href="">ABOUT US</a>
+        <a href="">CUSTOMER REVIEW</a>
+        <hr>
+      </div>
+
+
+    </div> -->
+
+    <div class="navbar">
+      <div class="navigation">
+        <div class="logoanditems">
+
+          <div class="logo">
+            <div class="logoimg">
+              <img src="../images/logo.png" alt="">
+            </div>
+          </div>
+          <div class="nav_items">
+            <div class="items">
+              <a href="/account">Home</a>
+            </div>
+
+
+            <div class="items">
+              <a href="/collection">Images Collection</a>
+            </div>
+            <div class="items">
+              <a id="more" href="/history">History</a>
+            </div>
+            <div class="items">
+              <a id="more" href="/about">About us</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="someicons">
+          <div class="search ">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
+              class="btn btn-primary">Login</button>
+          </div>
+          <!-- <div class="account">
+            <a href="./website08/login.html"><i class="ri-user-3-line"></i></a>
+          </div> -->
+          <div class="cart m-5">
+            <button class="signup rounded" type="button" data-bs-toggle="modal"
+              data-bs-target="#exampleModal1">Signup</button>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+
+
+
+
+    <!-- 
+    <div id="box1"> -->
+
+
+    <div id="box1leftbtm">
+      <div id="box1leftbtmtext">
+        <h1>AI Image <br>Generator</h1>
+        <p>Login to generate any image from text</p>
+        <div type="button" data-bs-toggle="modal"
+              data-bs-target="#exampleModal">Login <div> &#8594; </div>
+        </div>
+      </div>
+      <div id="box1leftbtmopt">
+        <div class="opt" value="">
+          <img
+            src="https://media.istockphoto.com/id/1949346122/photo/artificial-intelligence-ai-learning-machine-learning-internet-technology-networking-concept.jpg?s=2048x2048&w=is&k=20&c=suKKnr30S_YfEXMEAl2NFV12zqaTwvAu4HN45oKPf1g=">
+        </div>
+        <div class="opt">
+          <img
+            src="https://images.unsplash.com/photo-1689443111384-1cf214df988a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="">
+        </div>
+        <div class="opt">
+          <img
+            src="https://plus.unsplash.com/premium_photo-1682417576991-490b1185cbc2?q=80&w=1957&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            alt="">
+        </div>
+      </div>
+    </div>
+
+    <div id="box1rt">
+      <div id="inrbox1rt"></div>
+      <div id="box1right">
+        <img
+          src="https://plus.unsplash.com/premium_photo-1676637656166-cb7b3a43b81a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="">
+      </div>
+    </div>
+
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+    integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="../javascripts/home.js"></script>
+</body>
+
+</html>
